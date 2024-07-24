@@ -49,6 +49,8 @@ This is a full-featured e-commerce platform built with Node.js, Express.js, Mong
 
 - **POST /api/auth/signup**: Register a new user
 - **POST /api/auth/login**: Authenticate a user and get a token
+- **GET /api/auth/getOut**: logout a user and delete a token
+- **GET /api/auth/check_authU**: middleware
 
 ### Products
 
@@ -75,6 +77,7 @@ This is a full-featured e-commerce platform built with Node.js, Express.js, Mong
 
 - **GET /api/users/profile**: Get logged-in user's profile
 - **PUT /api/users/profile**: Update logged-in user's profile
+- **GET /api/auth/logout**: logout a user and delete a token
 
 ## Contributing
 
