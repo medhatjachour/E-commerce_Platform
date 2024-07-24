@@ -50,6 +50,6 @@ const productSchema = new mongoose.Schema({
         required: true
     }
 }, { timestamps: true }); // automatically adds two properties to your documents: createdAt and updatedAt. These properties are managed by Mongoose and are of type Date.
-  const Product = mongoose.model('product', productSchema);
+  const Product = mongoose.model('Product', productSchema);
 
   module.exports = Product

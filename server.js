@@ -13,6 +13,7 @@ const usersControllers = require('./controllers/usersControllers');
 const clientsControllers = require('./controllers/clientsControllers');
 const categoriesControllers = require('./controllers/categoriesControllers');
 const productControllers = require('./controllers/productControllers');
+const cartController = require('./controllers/cartControllers');
 const requireAuth = require('./middleware/requireAut');
 // create and express app
 const app = express();
@@ -83,6 +84,7 @@ app.put('/updateProduct/:id', productControllers.updateProduct)
 app.delete('/deleteProduct/:id',productControllers.deleteProduct)
 // get all 
 app.get('/notes',  productControllers.getall)
+// //// notes
 // get one 
 app.get('/notes/:id', noteControllers.getNote)
 // post
@@ -91,6 +93,16 @@ app.post('/addNote',noteControllers.addNote)
 app.put('/updateNoe/:id', noteControllers.updateNote)
 // get one 
 app.delete('/DeleteNoe/:id',noteControllers.deleteNote)
+
+// //// notes
+// get one 
+app.get('/notes/:id',requireAuth, cartController.getCartItems)
+// post
+app.post('/addNote',requireAuth, cartController.addToCart)
+// update 
+app.put('/updateNoe/:id',requireAuth, cartController.updateQuantity)
+// get one 
+app.delete('/DeleteNoe/:id',requireAuth, cartController.deleteCartItem)
 
 
 app.listen(process.env.PORT);
